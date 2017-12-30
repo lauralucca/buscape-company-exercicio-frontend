@@ -86,4 +86,29 @@ angular.module("addToCart").controller("addToCartCtrl", function ($scope) {
     $scope.removeFromCart = function (item, itemsList) {
     	$scope.cartItems.splice(itemsList.indexOf(item), 1);
     };
+
+	$scope.switchEnlarged = function(item) {
+		console.log('Index atual:' + item);
+	}
+
+
+ //    // initial image index
+ //    $scope.item.product.images._Index = 0;
+ //    // if a current image is the same as requested image
+ //    $scope.isActive = function (index) {
+ //        return $scope.item.product.images._Index === index;
+ //    };
+ //    // show prev image
+ //    $scope.showPrev = function () {
+ //        $scope.item.product.images._Index = ($scope.item.product.images._Index > 0) ? --$scope.item.product.images._Index : $scope.item.product.images.length - 1;
+ //    };
+ //    // show next image
+ //    $scope.showNext = function () {
+ //        $scope.item.product.images._Index = ($scope.item.product.images._Index < $scope.item.product.images.length - 1) ? ++$scope.item.product.images._Index : 0;
+ //    };
+ //    // show a certain image
+ //    $scope.showPhoto = function (index) {
+ //        $scope.item.product.images._Index = index;
+ //    };
+
 });

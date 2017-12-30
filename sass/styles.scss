@@ -1,2 +1,15 @@
+
+// settings
 @import 'reset.scss';
+@import 'colors.scss';
+
+// base
+@import 'general.scss';
+
+// header
+@import 'headermenu.scss';
+@import 'shoppingcart.scss';
+@import 'shoppingtotal.scss';
+
+// others
 @import 'index.scss';

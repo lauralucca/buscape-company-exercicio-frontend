@@ -79,7 +79,6 @@ Basta abrir o arquivo `index.html` (encontrado na raiz do projeto) no seu navega
 	git commit -m "construção da estrutura base em HTML"
 	```
 
-
 ### 2º dia
 
 - instalação do Gulp no computador
@@ -115,4 +114,13 @@ Basta abrir o arquivo `index.html` (encontrado na raiz do projeto) no seu navega
 	git add .
 	git commit -m "instalação de dependências, início dos estilos com sass e introdução da lógica de adicionar e remover itens no carrinho"
 	git push origin lauralucca
+	```
+
+### 3º dia
+
+- construção dos estilos do cabeçalho e do carrinho e introdução da lógica de funcionamento dos mesmos
+
+- stage e commit do estado atual do projeto 
+	```
+	git commit -m "lógica de mostrar/esconder o carrinho e estilos do cabeçalho e do carrinho"
 	```

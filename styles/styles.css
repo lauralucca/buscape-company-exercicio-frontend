@@ -46,6 +46,131 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+html,
+body {
+  font-family: sans-serif;
+  color: #333; }
+
+.container {
+  position: relative;
+  display: block;
+  margin-left: 16px;
+  margin-right: 16px; }
+
+.bscp-header {
+  position: relative; }
+
+.bscp-menu-wrap {
+  background-color: #ffce00;
+  padding: 12px 0; }
+
+.bscp-logo {
+  position: relative;
+  display: inline-block;
+  vertical-align: top; }
+  .bscp-logo img {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    height: 48px; }
+
+.bscp-menu-icon {
+  position: absolute;
+  display: inline-block;
+  height: 48px;
+  right: 0;
+  top: 0;
+  cursor: pointer; }
+  .bscp-menu-icon:hover .bscp-menu-hamburgerIcon {
+    color: white; }
+  .bscp-menu-icon-hamburgerIcon {
+    font-size: 32px;
+    padding: 8px 4px; }
+  .bscp-menu-icon-cartAmonut {
+    background-color: #d8272d;
+    color: white;
+    position: absolute;
+    bottom: 4px;
+    left: -8px;
+    text-align: center;
+    box-sizing: border-box;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 50%; }
+
+.bscp-cart-list {
+  background-color: #c59e00; }
+  .bscp-cart-list li {
+    padding: 16px 0;
+    border-top: 4px solid #dbb000; }
+  .bscp-cart-list-close {
+    position: absolute;
+    cursor: pointer;
+    right: 0;
+    top: 0;
+    border: none;
+    background: none;
+    font-size: 16px;
+    line-height: 16px;
+    padding: 3px 6px;
+    margin: 0;
+    z-index: 1; }
+    .bscp-cart-list-close:hover {
+      color: white; }
+
+.bscp-cart-product-img {
+  position: absolute;
+  width: 72px;
+  margin-right: 8px; }
+  .bscp-cart-product-img img {
+    max-width: 100%;
+    max-height: 100%; }
+
+.bscp-cart-product-description {
+  position: relative;
+  padding-left: 88px;
+  margin-right: 32px;
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 600; }
+  .bscp-cart-product-description-title {
+    display: inline-block;
+    width: 80%;
+    min-height: 28px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 36px; }
+  .bscp-cart-product-description-price {
+    max-height: 32px;
+    overflow: hidden;
+    position: absolute;
+    bottom: -2px;
+    left: 92px;
+    right: 0; }
+
+.bscp-cart-total {
+  background-color: #dbb000;
+  padding: 16px 4px;
+  font-weight: 600; }
+  .bscp-cart-total-empty {
+    text-align: center;
+    font-size: 16px;
+    line-height: 24px; }
+  .bscp-cart-total-full {
+    font-size: 12px;
+    line-height: 14px;
+    text-align: right; }
+    .bscp-cart-total-full label {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+      margin-top: 4px;
+      margin-bottom: 8px;
+      display: block; }
+    .bscp-cart-total-full p {
+      line-height: 14px;
+      margin-bottom: 4px; }
+
 .products-list {
   background-color: lightgrey;
   padding: 8px; }

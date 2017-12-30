@@ -1,0 +1,24 @@
+{
+  "name": "buscape-company-exercicio-frontend",
+  "version": "1.0.0",
+  "description": "LinkedIn: https://www.linkedin.com/in/lauraldelucca/\r GitHub: https://github.com/lauralucca",
+  "main": "",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lauralucca/buscape-company-exercicio-frontend.git"
+  },
+  "author": "Laura L de Lucca",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lauralucca/buscape-company-exercicio-frontend/issues"
+  },
+  "homepage": "https://github.com/lauralucca/buscape-company-exercicio-frontend#readme"
+}

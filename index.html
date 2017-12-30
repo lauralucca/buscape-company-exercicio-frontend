@@ -66,12 +66,12 @@
 							<div class="thumbnails">
 								<ul>
 									<li ng-repeat="image in item.product.images">
-										<img src="{{image}}">
+										<img ng-click="switchEnlarged(image, item)" src="{{image}}">
 									</li>
 								</ul>
 							</div>
 							<div class="enlarge">
-									<img src="{{item.product.images[0]}}" alt="">
+								<img src="{{item.product.enlargedImage}}" alt="">
 							</div>
 						</article>
 						<aside class="item-description">

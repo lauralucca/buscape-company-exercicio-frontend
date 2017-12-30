@@ -37,7 +37,7 @@ Basta abrir o arquivo `index.html` (encontrado na raiz do projeto) no seu navega
 - [x] Listar os produtos.
 - [x] Adicionar no carrinho.
 - [x] Remover do carrinho.
-- [ ] Galeria de imagens
+- [x] Galeria de imagens
 >
 >### Bonus game
 >
@@ -123,4 +123,11 @@ Basta abrir o arquivo `index.html` (encontrado na raiz do projeto) no seu navega
 - stage e commit do estado atual do projeto 
 	```
 	git commit -m "lógica de mostrar/esconder o carrinho e estilos do cabeçalho e do carrinho"
+	```
+
+- desenvolvimento da lógica da galeria
+
+- stage e commit do estado atual do projeto 
+	```
+	git commit -m "desenvolvimento da lógica da galeria"
 	```

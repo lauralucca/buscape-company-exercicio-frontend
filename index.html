@@ -27,6 +27,9 @@
 						<button class="bscp-cart-list-close" ng-click="removeFromCart(cartItem, cartItems)">
 							<i class="fa fa-times" aria-hidden="true"></i>
 						</button>
+
+						{{cartItem.product.quantity}}
+
 						<div class="bscp-cart-product">
 							<figure class="bscp-cart-product-img">
 								<img src="{{cartItem.product.images[0]}}" alt="">

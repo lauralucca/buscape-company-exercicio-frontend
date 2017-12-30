@@ -131,3 +131,10 @@ Basta abrir o arquivo `index.html` (encontrado na raiz do projeto) no seu navega
 	```
 	git commit -m "desenvolvimento da lógica da galeria"
 	```
+
+- desenvolvimento de lógica que mostra a quantidade de itens ao adicionar um item repetido
+
+- stage e commit do estado atual do projeto 
+	```
+	git commit -m "adicionando a quantidade dos itens"
+	```

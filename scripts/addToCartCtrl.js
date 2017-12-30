@@ -70,6 +70,7 @@ angular.module("addToCart").controller("addToCartCtrl", function ($scope) {
         let  productsList = productsJson;
         productsList.forEach(function(item) {
             item.product.enlargedImage = item.product.images[0];
+            item.product.quantity = 1
         });
         return productsList;
     }
@@ -87,13 +88,14 @@ angular.module("addToCart").controller("addToCartCtrl", function ($scope) {
 
     $scope.addToCart = function (item, itemsList) {
     	if (containsObject(item, itemsList)) {
-    		console.log("já tem! adicionar +1")
+            item.product.quantity++;
     	} else {
     		$scope.cartItems.push(item);
     	}
     };
 
     $scope.removeFromCart = function (item, itemsList) {
+        item.product.quantity = 1;
     	$scope.cartItems.splice(itemsList.indexOf(item), 1);
     };
 

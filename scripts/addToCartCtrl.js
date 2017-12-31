@@ -1,4 +1,4 @@
-angular.module("addToCart").controller("addToCartCtrl", function ($scope) {
+angular.module("addToCart").controller("addToCartCtrl", function ($scope, currencyFilter) {
 	var productsJson = [
         {
             "product": {
@@ -70,7 +70,9 @@ angular.module("addToCart").controller("addToCartCtrl", function ($scope) {
         let  productsList = productsJson;
         productsList.forEach(function(item) {
             item.product.enlargedImage = item.product.images[0];
-            item.product.quantity = 1
+            item.product.quantity = 1;
+            item.product.price.installmentValue = currencyFilter(item.product.price.installmentValue);
+            item.product.price.value = currencyFilter(item.product.price.value);
         });
         return productsList;
     }

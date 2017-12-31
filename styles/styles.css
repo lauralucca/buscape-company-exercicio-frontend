@@ -49,7 +49,7 @@ table {
 html,
 body {
   font-family: sans-serif;
-  color: #333; }
+  color: #333333; }
 
 .container {
   position: relative;
@@ -171,66 +171,56 @@ body {
       line-height: 14px;
       margin-bottom: 4px; }
 
-.products-list {
-  background-color: lightgrey;
-  padding: 8px; }
-
-.products-list li {
-  background-color: white;
-  margin: 8px;
-  border-radius: 8px; }
-
-.cart-list {
-  background-color: orange;
-  padding: 8px; }
-
-.cart-list li {
-  background-color: darkorange;
-  margin: 8px;
-  border-radius: 8px; }
-
-.price-tag {
-  color: white;
-  position: relative;
-  margin: 0 5px 0 10px;
-  display: inline-block;
-  height: 66px;
-  padding: 0 35px 0 20px;
-  font-size: 25px;
-  line-height: 65px;
-  cursor: pointer;
-  font-weight: 100;
-  margin: 20px 25px;
-  background: darkblue; }
-
-.price-tag:after {
-  position: absolute;
-  content: "";
-  right: -18px;
-  width: 1px;
-  height: 0px;
-  border-left: 18px solid darkblue;
-  border-top: 33px solid transparent;
-  border-bottom: 33px solid transparent; }
-
-.gallery {
-  display: inline-block;
-  vertical-align: top; }
-
-.thumbnails {
-  display: inline-block;
-  vertical-align: top; }
-  .thumbnails img {
-    width: 60px;
-    height: 60px; }
-
-.enlarge {
-  display: inline-block;
-  vertical-align: top; }
-  .enlarge img {
-    width: 264px;
-    height: 264px; }
-
-.item-description {
-  display: inline-block;
-  vertical-align: top; }
+.bscp-products {
+  background-color: #f2f2f2;
+  padding: 16px 0; }
+  .bscp-products-list {
+    display: block;
+    width: 100%; }
+    .bscp-products-list-itens {
+      background-color: white;
+      position: relative;
+      border-radius: 4px;
+      margin-bottom: 16px;
+      padding: 4px 8px;
+      box-sizing: border-box; }
+    .bscp-products-list-gallery {
+      display: inline-block; }
+      .bscp-products-list-gallery-thumbnails {
+        display: inline-block;
+        vertical-align: top;
+        margin: 6px 0 0 0; }
+        .bscp-products-list-gallery-thumbnails-itens {
+          border: 2px white solid;
+          width: 40px;
+          height: 40px;
+          margin-bottom: 4px;
+          border-radius: 4px;
+          text-align: center;
+          cursor: pointer; }
+          .bscp-products-list-gallery-thumbnails-itens.active {
+            border-color: red; }
+          .bscp-products-list-gallery-thumbnails-itens img {
+            display: block;
+            vertical-align: middle;
+            text-align: center;
+            width: 36px;
+            margin: 2px;
+            display: block;
+            border-radius: 4px; }
+          .bscp-products-list-gallery-thumbnails-itens:hover {
+            border-color: gray; }
+      .bscp-products-list-gallery-enlarge {
+        display: inline-block;
+        vertical-align: top;
+        height: 200px;
+        width: 200px; }
+        .bscp-products-list-gallery-enlarge img {
+          display: block;
+          width: 100%;
+          box-sizing: border-box;
+          padding: 16px; }
+  .bscp-products-description {
+    position: absolute;
+    top: 0;
+    left: 264px; }

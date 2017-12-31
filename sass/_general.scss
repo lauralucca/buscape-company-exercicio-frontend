@@ -1,8 +1,10 @@
 
+$text-color: $black;
+
 html,
 body {
   font-family: sans-serif;
-  color: $text-primary;
+  color: $text-color;
 }
 
 .container {

@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html ng-app="addToCart">
+
 	<head>
 		<meta charset="utf-8">
 		<title>Exercício Buscapé Company</title>
 		<link rel="stylesheet" href="resources/font-awesome-4.7.0/css/font-awesome.css">
 		<link rel="stylesheet" type="text/css" href="styles/styles.css">
 	</head>
-	<body ng-controller="addToCartCtrl">
 
+	<body ng-controller="addToCartCtrl">
 		<header class="bscp-header">
+
 			<section class="bscp-menu-wrap">
 				<div class="container">
 					<figure class="bscp-logo">
@@ -39,8 +41,8 @@
 									{{cartItem.product.name}}
 								</strong>
 								<span class="bscp-cart-product-description-price">
-									<p>{{cartItem.product.price.installments}}x R$ {{cartItem.product.price.installmentValue}}</p>
-									<p>ou R$ {{cartItem.product.price.value}} à vista</p>
+									<p>{{cartItem.product.price.installments}}x {{cartItem.product.price.installmentValue}}</p>
+									<p>ou {{cartItem.product.price.value}} à vista</p>
 								</span>
 							</figcaption>
 						</div>
@@ -59,38 +61,44 @@
 					<p>ou R$ 9.999,99 à vista</p>
 				</section>
 			</footer>
-		</header>
 
-		<main class="products-list">
-			<ul>
-				<li ng-repeat="item in items">
-					<section>
-						<article class="gallery">
-							<div class="thumbnails">
-								<ul>
-									<li ng-repeat="image in item.product.images">
-										<img ng-click="switchEnlarged(image, item)" src="{{image}}">
-									</li>
-								</ul>
-							</div>
-							<div class="enlarge">
+		</header>
+		<main class="bscp-products">
+
+			<section class="container">
+				<ul class="bscp-products-list">
+					<li class="bscp-products-list-itens" ng-repeat="item in items">
+
+						<article class="bscp-products-list-gallery">
+							<ul class="bscp-products-list-gallery-thumbnails">
+								<li class="bscp-products-list-gallery-thumbnails-itens"
+									ng-click="switchEnlarged(image, item)"
+									ng-repeat="image in item.product.images">
+									<img src="{{image}}">
+								</li>
+							</ul>
+							<div class="bscp-products-list-gallery-enlarge">
 								<img src="{{item.product.enlargedImage}}" alt="">
 							</div>
 						</article>
-						<aside class="item-description">
+
+						<aside class="bscp-products-description">
 							<h3>{{item.product.name}}</h3>
-							<div class="price-tag">Melhor preço</div>
-							<p>{{item.product.price.installments}}x R$ {{item.product.price.installmentValue}}</p>
-							<p>ou <strong>R$ {{item.product.price.value}}</strong> à vista</p>
-							<a href="">
-								<button ng-click="addToCart(item, cartItems)">Adicionar ao carrinho</button>
-							</a>
+							<div>Melhor preço</div>
+							<p>{{item.product.price.installments}}x {{item.product.price.installmentValue}}</p>
+							<p>ou {{item.product.price.value}} à vista</p>
+							<button ng-click="addToCart(item, cartItems)">
+								Adicionar ao carrinho
+							</button>
 						</aside>
-					</section>
-				</li>
-			</ul>
+
+					</li>
+				</ul>
+			</section>
+
 		</main>
 		<script src="resources/angular-1.6.6/angular.js"></script>
+		<script src="resources/angular-1.6.6/angular-locale_pt-br.js"></script>
 		<script src="scripts/addToCart.js"></script>
 		<script src="scripts/addToCartCtrl.js"></script>
 	</body>

@@ -138,3 +138,12 @@ Basta abrir o arquivo `index.html` (encontrado na raiz do projeto) no seu navega
 	```
 	git commit -m "adicionando a quantidade dos itens"
 	```
+
+- iniciando o desenvolvimento dos estilos da lista de produtos
+
+- stage, commit e push do estado atual do projeto 
+	```
+	git add .
+	git commit -m "iniciando o desenvolvimento dos estilos da lista de produtos"
+	git push origin lauralucca
+	```

@@ -33,8 +33,8 @@ $header-amount-background: $danger;
 		top: 0;
 		cursor: pointer;
 		&:hover {
-			.bscp-menu-hamburgerIcon {
-				color: white;
+			.bscp-menu-icon-hamburgerIcon {
+				opacity: .6;
 			}
 		}
 		&-hamburgerIcon {

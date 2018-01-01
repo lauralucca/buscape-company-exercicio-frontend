@@ -49,7 +49,8 @@ table {
 html,
 body {
   font-family: sans-serif;
-  color: #333333; }
+  color: #333333;
+  min-width: 600px; }
 
 .container {
   position: relative;
@@ -81,8 +82,8 @@ body {
   right: 0;
   top: 0;
   cursor: pointer; }
-  .bscp-menu-icon:hover .bscp-menu-hamburgerIcon {
-    color: white; }
+  .bscp-menu-icon:hover .bscp-menu-icon-hamburgerIcon {
+    opacity: .6; }
   .bscp-menu-icon-hamburgerIcon {
     font-size: 32px;
     padding: 8px 4px; }
@@ -149,6 +150,34 @@ body {
     bottom: -2px;
     left: 92px;
     right: 0; }
+  .bscp-cart-product-description-quantity {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    line-height: 18px; }
+    .bscp-cart-product-description-quantity i, .bscp-cart-product-description-quantity span {
+      display: inline-block;
+      position: relative;
+      vertical-align: top;
+      box-sizing: content-box;
+      text-align: center; }
+    .bscp-cart-product-description-quantity i {
+      font-size: 24px;
+      width: 24px;
+      height: 24px;
+      color: gray;
+      padding: 4px;
+      cursor: pointer;
+      color: rgba(255, 255, 255, 0.8); }
+      .bscp-cart-product-description-quantity i:hover {
+        color: white; }
+    .bscp-cart-product-description-quantity span {
+      font-size: 16px;
+      min-width: 24px;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 4px;
+      margin: 3px 0; }
 
 .bscp-cart-total {
   background-color: #dbb000;
@@ -180,12 +209,23 @@ body {
     .bscp-products-list-itens {
       background-color: white;
       position: relative;
+      display: inline-block;
+      vertical-align: top;
       border-radius: 4px;
       margin-bottom: 16px;
       padding: 4px 8px;
-      box-sizing: border-box; }
+      box-sizing: border-box;
+      width: 100%;
+      min-height: 200px; }
+      @media (min-width: 1200px) {
+        .bscp-products-list-itens {
+          width: 48%;
+          margin-left: 1%;
+          margin-right: 1%; } }
     .bscp-products-list-gallery {
-      display: inline-block; }
+      display: inline-block;
+      z-index: 1;
+      position: absolute; }
       .bscp-products-list-gallery-thumbnails {
         display: inline-block;
         vertical-align: top;
@@ -199,7 +239,7 @@ body {
           text-align: center;
           cursor: pointer; }
           .bscp-products-list-gallery-thumbnails-itens.active {
-            border-color: red; }
+            border-color: #ffce00; }
           .bscp-products-list-gallery-thumbnails-itens img {
             display: block;
             vertical-align: middle;
@@ -209,7 +249,7 @@ body {
             display: block;
             border-radius: 4px; }
           .bscp-products-list-gallery-thumbnails-itens:hover {
-            border-color: gray; }
+            border-color: #dedede; }
       .bscp-products-list-gallery-enlarge {
         display: inline-block;
         vertical-align: top;
@@ -221,6 +261,99 @@ body {
           box-sizing: border-box;
           padding: 16px; }
   .bscp-products-description {
-    position: absolute;
+    position: relative;
     top: 0;
-    left: 264px; }
+    left: 0;
+    padding: 16px 16px 16px 264px;
+    height: 100%;
+    box-sizing: border-box;
+    width: 100%; }
+    .bscp-products-description h3 {
+      min-height: 80px;
+      font-size: 18px;
+      line-height: 24px;
+      padding-bottom: 96px; }
+    .bscp-products-description-price {
+      position: absolute;
+      padding: 0 16px 16px 264px;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      box-sizing: border-box; }
+      .bscp-products-description-price-label {
+        display: block;
+        font-weight: 600;
+        margin: 0 0 8px 0;
+        text-transform: uppercase;
+        height: 27px;
+        border-top: 1px solid #dedede;
+        padding-top: 9px; }
+        .bscp-products-description-price-label span {
+          float: left;
+          font-size: 8px;
+          line-height: 9px;
+          padding: 9px;
+          display: inline-block;
+          vertical-align: top;
+          background-color: #048ee2;
+          color: white; }
+        .bscp-products-description-price-label:after {
+          float: left;
+          display: inline-block;
+          vertical-align: top;
+          content: "";
+          width: 0;
+          height: 0;
+          border-left: 13.5px solid #048ee2;
+          border-top: 13.5px solid transparent;
+          border-bottom: 13.5px solid transparent; }
+      .bscp-products-description-price-value-wrap {
+        display: block; }
+      .bscp-products-description-price-value, .bscp-products-description-price-buy {
+        display: inline-block;
+        width: 50%;
+        margin: 0;
+        padding: 0;
+        vertical-align: top; }
+      .bscp-products-description-price-value {
+        font-size: 16px; }
+        .bscp-products-description-price-value-installment {
+          color: #12b346;
+          font-weight: 600;
+          margin-bottom: 6px;
+          line-height: 24px; }
+          .bscp-products-description-price-value-installment-value {
+            font-size: 22px; }
+        .bscp-products-description-price-value-full {
+          font-size: 11px;
+          font-weight: 400; }
+          .bscp-products-description-price-value-full-value {
+            color: #12b346;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 2px;
+            margin-right: 2px; }
+      .bscp-products-description-price-buy {
+        text-align: right; }
+        .bscp-products-description-price-buy button {
+          font-size: 11px;
+          line-height: 14px;
+          border: none;
+          background-color: #12b346;
+          color: white;
+          padding: 6px 8px;
+          cursor: pointer; }
+          .bscp-products-description-price-buy button i {
+            margin-left: 4px;
+            font-size: 9px; }
+          .bscp-products-description-price-buy button:hover {
+            background-color: rgba(34, 177, 76, 0.8); }
+  .bscp-products-empty {
+    text-align: center;
+    margin: 16px; }
+    .bscp-products-empty * {
+      margin: 8px 0 16px 0; }
+    .bscp-products-empty h1 {
+      font-size: 32px; }
+    .bscp-products-empty p {
+      font-size: 24px; }

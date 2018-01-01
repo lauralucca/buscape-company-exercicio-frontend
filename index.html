@@ -3,6 +3,7 @@
 
 	<head>
 		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Exercício Buscapé Company</title>
 		<link rel="stylesheet" href="resources/font-awesome-4.7.0/css/font-awesome.css">
 		<link rel="stylesheet" type="text/css" href="styles/styles.css">
@@ -18,7 +19,7 @@
 					</figure>
 					<div class="bscp-menu-icon" ng-click="showCart=!showCart">
 						<i class="fa fa-bars bscp-menu-icon-hamburgerIcon" aria-hidden="true"></i>
-						<i ng-show="cartItems.length>0" class="bscp-menu-icon-cartAmonut">{{cartItems.length}}</i>
+						<i ng-show="cartItems.length>0" class="bscp-menu-icon-cartAmonut">{{quantityTotal}}</i>
 					</div>
 				</div>
 			</section>
@@ -30,21 +31,26 @@
 							<i class="fa fa-times" aria-hidden="true"></i>
 						</button>
 
-						{{cartItem.product.quantity}}
-
 						<div class="bscp-cart-product">
 							<figure class="bscp-cart-product-img">
-								<img src="{{cartItem.product.images[0]}}" alt="">
+								<img src="{{cartItem.product.images[0].url}}" alt="">
 							</figure>
 							<figcaption class="bscp-cart-product-description">
 								<strong class="bscp-cart-product-description-title">
 									{{cartItem.product.name}}
 								</strong>
 								<span class="bscp-cart-product-description-price">
-									<p>{{cartItem.product.price.installments}}x {{cartItem.product.price.installmentValue}}</p>
-									<p>ou {{cartItem.product.price.value}} à vista</p>
+									<p>{{cartItem.product.price.installments}}x {{cartItem.product.price.installmentValue | currency}}</p>
+									<p>ou {{cartItem.product.price.value  | currency}} à vista</p>
 								</span>
 							</figcaption>
+							<span class="bscp-cart-product-description-quantity">
+								<i class="fa fa-minus-circle" aria-hidden="true" ng-click="changeProductQuantity(cartItem, -1)"></i>
+								<span>
+									{{cartItem.product.quantity}}
+								</span>
+								<i class="fa fa-plus-circle" aria-hidden="true" ng-click="changeProductQuantity(cartItem, 1)"></i>
+							</span>
 						</div>
 					</div>
 				</li>
@@ -52,54 +58,80 @@
 
 			<footer class="bscp-cart-total" ng-show="showCart">
 				<section ng-show="cartItems.length==0" class="container bscp-cart-total-empty">
-					<p>Não há itens no seu carrinho. :(</p>
+					<p>Não há itens no seu carrinho... :(</p>
 					<p>Compre algo!</p>
 				</section>
 				<section ng-show="cartItems.length>0" class="container bscp-cart-total-full">
 					<label>subtotal</label>
-					<p>12x R$ 999,99</p>
-					<p>ou R$ 9.999,99 à vista</p>
+					<p>10x {{installmentsTotal | currency}}</p>
+					<p>ou {{cartTotal | currency}} à vista</p>
 				</section>
 			</footer>
 
 		</header>
 		<main class="bscp-products">
 
-			<section class="container">
+			<section class="container bscp-products-empty" ng-if="items.length==0">
+				<h1>Não estamos vendendo nada no momento...</h1>
+				<p>Mas agradecemos a visita! :)</p>
+			</section>
+
+			<section class="container" ng-if="items.length>0">
 				<ul class="bscp-products-list">
 					<li class="bscp-products-list-itens" ng-repeat="item in items">
 
 						<article class="bscp-products-list-gallery">
 							<ul class="bscp-products-list-gallery-thumbnails">
 								<li class="bscp-products-list-gallery-thumbnails-itens"
-									ng-click="switchEnlarged(image, item)"
+									ng-class="{'active': image.active}"
+									ng-click="setActiveImage(image, item)"
 									ng-repeat="image in item.product.images">
-									<img src="{{image}}">
+									<img ng-src="{{ image.url ? image.url : 'images/error.jpg'}}"
+										err-src="images/error.jpg">
 								</li>
 							</ul>
 							<div class="bscp-products-list-gallery-enlarge">
-								<img src="{{item.product.enlargedImage}}" alt="">
+								<img ng-src="{{item.product.enlargedImage.url ? item.product.enlargedImage.url : 'images/error.png'}}"
+									err-src="images/error.jpg"
+									alt="">
 							</div>
 						</article>
 
 						<aside class="bscp-products-description">
 							<h3>{{item.product.name}}</h3>
-							<div>Melhor preço</div>
-							<p>{{item.product.price.installments}}x {{item.product.price.installmentValue}}</p>
-							<p>ou {{item.product.price.value}} à vista</p>
-							<button ng-click="addToCart(item, cartItems)">
-								Adicionar ao carrinho
-							</button>
+							<div class="bscp-products-description-price">
+								<p class="bscp-products-description-price-label">
+									<span>Melhor preço</span>
+								</p>
+								<div class="bscp-products-description-price-value-wrap">
+									<div class="bscp-products-description-price-value">
+										<p class="bscp-products-description-price-value-installment">
+											{{item.product.price.installments}}x
+											<span class="bscp-products-description-price-value-installment-value">
+												{{item.product.price.installmentValue | currency}}
+											</span>
+										</p>
+										<p class="bscp-products-description-price-value-full">
+											ou <span class="bscp-products-description-price-value-full-value">{{item.product.price.value | currency}}</span> à vista
+										</p>
+									</div><div class="bscp-products-description-price-buy">
+										<button ng-click="addToCart(item, cartItems)">
+											Adicionar ao carrinho
+											<i class="fa fa-chevron-right" aria-hidden="true"></i>
+										</button>
+									</div>
+								</div>
+							</div>
 						</aside>
 
 					</li>
 				</ul>
 			</section>
-
 		</main>
-		<script src="resources/angular-1.6.6/angular.js"></script>
-		<script src="resources/angular-1.6.6/angular-locale_pt-br.js"></script>
-		<script src="scripts/addToCart.js"></script>
-		<script src="scripts/addToCartCtrl.js"></script>
+		<script type="text/javascript" src="resources/angular-1.6.6/angular.js"></script>
+		<script type="text/javascript" src="resources/angular-1.6.6/angular-locale_pt-br.js"></script>
+		<script type="text/javascript" src="scripts/dirtyData.js"></script>
+		<script type="text/javascript" src="scripts/addToCart.js"></script>
+		<script type="text/javascript" src="scripts/addToCartCtrl.js"></script>
 	</body>
 </html>

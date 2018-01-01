@@ -5,6 +5,8 @@ html,
 body {
   font-family: sans-serif;
   color: $text-color;
+  // min-width: 356px;
+  min-width: 600px;
 }
 
 .container {
